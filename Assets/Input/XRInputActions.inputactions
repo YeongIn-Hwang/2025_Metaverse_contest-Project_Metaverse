@@ -34,9 +34,9 @@
             "id": "58b322f3-abf8-40bb-9b1d-d5a6f8c1a0b8",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Move",
                     "type": "Value",
-                    "id": "c20e152a-09fb-4432-b960-8ec4719a2ec0",
+                    "id": "90a69d9e-e689-4961-aaed-105b02949720",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -46,12 +46,106 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "107d98a0-41c6-409b-b3b5-73c57e5013e7",
-                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "id": "14ba4374-7121-412a-a4b9-2007d017529f",
+                    "path": "<XRController>{LeftHand}/thumbstick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "795f04b3-d042-431a-9cea-942467bb1ab6",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "ce37e58f-b40d-457b-be28-8223b6a4a392",
+                    "path": "<Keyboard>/#(W)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "90bf3035-9d49-4a4b-96e0-6bbe625efc8f",
+                    "path": "<Keyboard>/#(S)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4d9309ec-7e21-472f-9de8-4b35b56c8b45",
+                    "path": "<Keyboard>/#(A)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "44fc4deb-7c70-43af-9c87-329c64b9b954",
+                    "path": "<Keyboard>/#(D)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "XRI RightHand",
+            "id": "d2177ae5-7583-4775-95ac-8bb5c73895e5",
+            "actions": [
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "f1731e00-c4f2-43e5-91e7-deeb3457b48a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2aa6d8b8-e5a7-4f92-82e9-006c3ba09475",
+                    "path": "<XRController>{RightHand}/{Grip}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86a5284c-fa05-45a1-b357-9564c92fd4a3",
+                    "path": "<Keyboard>/#(G)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

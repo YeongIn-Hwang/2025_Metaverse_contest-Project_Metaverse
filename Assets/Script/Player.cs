@@ -1,28 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SimpleVRMove : MonoBehaviour
+public class MovePlayer : MonoBehaviour
 {
-    public InputActionReference moveInput;  // 조이스틱 입력 연결
-    public float moveSpeed = 1.5f;
+    [Header("입력 액션")]
+    public InputActionReference moveAction;
+
+    [Header("이동 속도")]
+    public float moveSpeed = 4.0f;
+
+    private void Start()
+    {
+    }
+    void OnEnable()
+    {
+        moveAction?.action?.Enable();
+    }
 
     void Update()
     {
-        if (moveInput == null) return;
+        // Vector2 방향 입력값 받기 (x = 좌우, y = 앞뒤)
+        Vector2 input = moveAction.action.ReadValue<Vector2>();
+        Debug.Log("Move 입력값: " + input);
 
-        Vector2 input = moveInput.action.ReadValue<Vector2>();
-        Vector3 direction = new Vector3(input.x, 0, input.y);
+        // 이동 방향 (x, z로 변환해서 월드에 적용)
+        Vector3 moveDirection = new Vector3(input.x, 0, input.y);
 
-        // HMD 바라보는 방향 기준으로 이동 (전방 이동 처리)
-        Vector3 cameraForward = Camera.main.transform.forward;
-        cameraForward.y = 0;
-        cameraForward.Normalize();
-
-        Vector3 cameraRight = Camera.main.transform.right;
-        cameraRight.y = 0;
-        cameraRight.Normalize();
-
-        Vector3 move = cameraForward * direction.y + cameraRight * direction.x;
-        transform.position += move * moveSpeed * Time.deltaTime;
+        // 실제 이동
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
     }
 }
