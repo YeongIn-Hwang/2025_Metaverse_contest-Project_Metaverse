@@ -11,7 +11,9 @@ public class ControlPanelTrigger : MonoBehaviour
     public TextMeshProUGUI promptText; // or TextMeshProUGUI
     public InputActionReference grabAction; // 그립 액션 (오른손 또는 왼손)
     public SnapTurnProvider SnapTurnProvider; // 회전 액션
-    public Code_Text code_text;
+    public Code_Text code_text; 
+
+    ///////////////////////////////////////////////////////////////////////////////////////
 
     [TextArea]
     public string codeTemplate = "";
